@@ -1,0 +1,42 @@
+DICLAIMER:
+Do not use this distribution on any network you do not own or have
+permission to use.
+
+This distibution contains many penetration tests that should only be used against your own systems and software.
+
+By using the distribution and programs, you are taking responsibilty for any and all damage and chaos you will inflict on systems, networks or software you do not have permission to attack, probe or scan.
+
+
+=====================
+
+This README file contains information on the contents of the
+kali layer.
+
+Please see the corresponding sections below for details.
+
+
+Dependencies
+============
+
+This layer depends on:
+
+  URI: git://git.openembedded.org/bitbake
+  branch: master
+
+  URI: git://git.openembedded.org/openembedded-core
+  layers: meta
+  branch: master
+
+  URI: git://git.yoctoproject.org/xxxx
+  layers: xxxx
+  branch: master
+
+
+Patches
+=======
+
+Please submit any patches against the kali layer to the
+Me.
+
+Maintainer: Armin Kuster <akuster808@gmail.com>
+

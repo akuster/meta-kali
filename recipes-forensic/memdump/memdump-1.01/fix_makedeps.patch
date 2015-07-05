@@ -1,0 +1,15 @@
+Index: memdump-1.01/makedefs
+===================================================================
+--- a/makedefs
++++ b/makedefs
+@@ -32,7 +32,9 @@ SunOS.5.[0-5]*)	DEFS="-DSUNOS5 -DUSE_PRE
+ 		;;
+   Linux.2.4*)   DEFS="-DLINUX2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
+ 		;;
+-    Linux.2*)   DEFS="-DLINUX2"
++    Linux.3*)   DEFS="-DLINUX2"
++		;;
++  GNU*)   DEFS="-DLINUX2 -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64"
+ 		;;
+            *)   echo unsupported system: $SYSTEM.$RELEASE 1>&2; exit 1
+ 		;;

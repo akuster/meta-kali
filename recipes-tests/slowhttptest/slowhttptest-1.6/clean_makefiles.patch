@@ -1,0 +1,36 @@
+Index: src/Makefile.am
+===================================================================
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -1,7 +1,7 @@
+ AUTOMAKE_OPTIONS = foreign
+ 
+-FLAGS=@CFLAGS@ -Wall -I/usr/local/include
+-LDFLAGS=@LDFLAGS@ -L/usr/local/lib -lssl
++FLAGS=@CFLAGS@ -Wall 
++LDFLAGS=@LDFLAGS@ -lssl
+ 
+ bin_PROGRAMS = slowhttptest
+ slowhttptest_SOURCES = slowhttptestmain.cc slowhttptest.cc slowsocket.cc slowstats.cc slowurl.cc slowlog.cc text-generator.cc range-generator.cc slowhttptest.h slowsocket.h slowstats.h slowurl.h slowlog.h text-generator.h range-generator.h
+Index: src/Makefile.in
+===================================================================
+--- a/src/Makefile.in
++++ b/src/Makefile.in
+@@ -97,7 +97,7 @@ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+-LDFLAGS = @LDFLAGS@ -L/usr/local/lib -lssl
++LDFLAGS = @LDFLAGS@ -lssl
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+ LTLIBOBJS = @LTLIBOBJS@
+@@ -160,7 +160,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign
+-FLAGS = @CFLAGS@ -Wall -I/usr/local/include
++FLAGS = @CFLAGS@ -Wall 
+ slowhttptest_SOURCES = slowhttptestmain.cc slowhttptest.cc slowsocket.cc slowstats.cc slowurl.cc slowlog.cc text-generator.cc range-generator.cc slowhttptest.h slowsocket.h slowstats.h slowurl.h slowlog.h text-generator.h range-generator.h
+ all: all-am
+ 
