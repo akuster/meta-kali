@@ -14,9 +14,7 @@ RDEPENDS_${PN} = "\
     atftpd \
     axel \
     expect \
-    florence \
     git \
-    gparted \
     iw \
     lvm2 \
     netcat \
@@ -35,4 +33,10 @@ RDEPENDS_${PN} = "\
     tcpdump \
     tmux \
     testdisk \
+    ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-kali-base-xfce", "", d)} \
+"
+
+RDEPENDS_${PN}-xcfe = "\
+    gparted \
+    florence \
 "
