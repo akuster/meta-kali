@@ -6,13 +6,11 @@ KALI_IMAGE_TYPE = "Kali"
 
 IMAGE_INSTALL = "\
     packagegroup-base \
-    packagegroup-core-x11 \
-    packagegroup-xfce-base \
     packagegroup-kali-base \
     os-release \
+    ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-core-x11", "", d)} \
+    ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-xfce-base", "", d)} \
     "
-
-REQUIRED_DISTRO_FEATURES = "x11"
 
 IMAGE_LINGUAS ?= " "
 
