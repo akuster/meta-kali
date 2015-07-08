@@ -14,3 +14,5 @@ SRC_URI[sha256sum] = "6d19b06b9bb6c9562b5f67ec36511946cfcfebf024a0c804b6fd5c36d3
 S = "${WORKDIR}/${SRCNAME}-${PV}"
 
 inherit distutils
+
+RDEPENDS_${PN} = "python-unittest"
