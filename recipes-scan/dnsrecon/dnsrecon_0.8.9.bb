@@ -8,6 +8,8 @@ SRC_URI = "git://github.com/darkoperator/dnsrecon.git"
 
 S = "${WORKDIR}/git"
 
+inherit pythonnative
+
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
@@ -20,4 +22,4 @@ PACKAGE = "${PN}"
 
 FILES_${PN} = "/opt/${PN}"
 
-RDEPENDS_${PN} = "python-dnspython  python-netaddr"
+RDEPENDS_${PN} = "python-dnspython  python-netaddr python-sqlite3 python-xml python-json"
