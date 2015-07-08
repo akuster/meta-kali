@@ -13,6 +13,7 @@ RDEPENDS_${PN} = "\
     DHCPig \
     funkload \
     rtpflood \
+    scapy \
     slowhttptest \
     t50 \
     thc-ipv6 \
