@@ -12,6 +12,7 @@ PACKAGES = "\
 RDEPENDS_${PN} = "\
     apache2 \
     atftpd \
+    connman \
     axel \
     expect \
     git \
