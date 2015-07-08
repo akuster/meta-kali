@@ -9,6 +9,6 @@ IMAGE_INSTALL += "\
     packagegroup-kali-passwd \
     packagegroup-kali-testing \
     packagegroup-kali-forensic \
-    packagegroup-kali-wireless \
+    ${@bb.utils.contains("DISTRO_FEATURES", "wifi", "packagegroup-kali-wireless", "", d)} \
     packagegroup-kali-scan \
     "
