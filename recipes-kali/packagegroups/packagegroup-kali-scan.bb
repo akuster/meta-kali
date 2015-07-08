@@ -10,8 +10,14 @@ PACKAGES = "\
         "
 
 RDEPENDS_${PN} = "\
-    discover \
+    nmap \
     dnsrecon \
     goofile \
     theHarvester \
+    ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-kali-scan-xfce", "", d)} \
 "
+RDEPENDS_packagegroup-kali-scan-xfce = "\
+    discover \
+    xdotool \
+"
+
