@@ -19,3 +19,5 @@ PACKAGECONFIG ?= ""
 PACKAGECONFIG[ncurses] = "--with-ncurses-lib=${STAGING_INCDIR} --with-ncurses-includes=${STAGING_LIBDIR}, --without-ncurses, ncurses,"
 
 PACKAGECONFIG[jpeg] = "--with-jpeg-lib=${STAGING_INCDIR} --with-jpeg-includes=${STAGING_LIBDIR}, --without-jpeg, jpeg,"
+
+RDEPENDS_${PN} = "libewf"
