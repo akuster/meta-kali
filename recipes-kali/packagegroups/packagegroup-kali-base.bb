@@ -7,6 +7,7 @@ inherit packagegroup
 
 PACKAGES = "\
     ${PN} \
+    ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-kali-base-xfce", "", d)} \
     "
 
 RDEPENDS_${PN} = "\
@@ -37,7 +38,7 @@ RDEPENDS_${PN} = "\
     ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-kali-base-xfce", "", d)} \
 "
 
-RDEPENDS_${PN}-xcfe = "\
+RDEPENDS_packagegroup-kali-base-xcfe = "\
     gparted \
     florence \
 "
