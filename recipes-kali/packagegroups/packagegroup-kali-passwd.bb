@@ -11,4 +11,5 @@ PACKAGES = "\
 
 RDEPENDS_${PN} = "\
     pwgen \
+    john \
 "
