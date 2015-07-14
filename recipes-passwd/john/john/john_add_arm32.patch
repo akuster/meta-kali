@@ -1,0 +1,32 @@
+add support for arm32
+
+Upstream Status: Pending
+
+Signed-off-by: Armin Kuster <akuster808@gmail.com>
+
+Index: src/Makefile
+===================================================================
+--- a/src/Makefile
++++ b/src/Makefile
+@@ -104,6 +104,7 @@ default:
+ #	@echo "linux-ppc64-altivec      Linux, PowerPC 64-bit w/AltiVec"
+ 	@echo "linux-ppc64              Linux, PowerPC 64-bit"
+ 	@echo "linux-ia64               Linux, IA-64"
++	@echo "linux-arm32              Linux, Arm 32-bit"
+ 	@echo "freebsd-x86-64           FreeBSD, x86-64 with SSE2 (best)"
+ 	@echo "freebsd-x86-sse2         FreeBSD, x86 with SSE2 (best if 32-bit)"
+ 	@echo "freebsd-x86-mmx          FreeBSD, x86 with MMX"
+@@ -304,6 +305,13 @@ linux-ia64:
+ 	$(MAKE) $(PROJ) \
+ 		JOHN_OBJS="$(JOHN_OBJS) c3_fmt.o" \
+ 		CFLAGS="$(CFLAGS) -DHAVE_CRYPT" \
++		LDFLAGS="$(LDFLAGS) -lcrypt"
++
++linux-arm32:
++	$(LN) arm32.h arch.h
++	$(MAKE) $(PROJ) \
++		JOHN_OBJS="$(JOHN_OBJS) c3_fmt.o" \
++		CFLAGS="$(CFLAGS) -DHAVE_CRYPT" \
+ 		LDFLAGS="$(LDFLAGS) -lcrypt"
+ 
+ freebsd-x86-64:

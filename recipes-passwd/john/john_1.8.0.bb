@@ -7,7 +7,10 @@ LIC_FILES_CHKSUM = "file://doc/LICENSE;md5=123ff47bb528caa97868cdfc262bd96a"
 
 DEPENDS = "pwgen-native"
 
-SRC_URI = "http://www.openwall.com/${PN}/j/${PN}-${PV}.tar.xz"
+SRC_URI = "http://www.openwall.com/${PN}/j/${PN}-${PV}.tar.xz \
+            file://john_add_arm32.patch \
+            file://arm32.h "
+"
 
 SRC_URI[md5sum] = "a4086df68f51778782777e60407f1869"
 SRC_URI[sha256sum] = "952cf68369fb5b27f2d112ce7ca1eb16b975c85cbce8c658abb8bc5a20e1b266"
