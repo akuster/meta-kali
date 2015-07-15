@@ -1,9 +1,13 @@
+
+PSWD_GEN_LEN ?= "8"
+PSWD_GEN_NUM_PW ?= "100000"
+PSWD_GEN_OPT ?= "-1cn"
+
 gen_passwd () {
-    #${STAGING_SBINDIR_NATIVE}/pwgen -1cn 8 1000000000 | dd obs=10M >  ${IMAGE_ROOTFS}/${datadir}/passwd.lst 
-    ${STAGING_SBINDIR_NATIVE}/pwgen -1cn 8 1000000000  >  ${IMAGE_ROOTFS}/${datadir}/passwd.lst 
+    ${STAGING_BINDIR_NATIVE}/pwgen ${PSWD_GEN_OPT} ${PSWD_GEN_LEN} ${PSWD_GEN_NUM_PW} >  ${IMAGE_ROOTFS}/${datadir}/passwd.lst 
 
 }
 
-#EXTRA_IMAGEDEPENDS += "pwgen-native"
+EXTRA_IMAGEDEPENDS += " pwgen-native"
 
-#ROOTFS_POSTPROCESS_COMMAND += 'gen_passwd;'
+ROOTFS_POSTPROCESS_COMMAND_prepend = "gen_passwd;"
