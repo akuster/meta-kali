@@ -10,6 +10,8 @@ PACKAGES = "\
         "
 
 RDEPENDS_${PN} = "\
+    crunch \
+    ncrack\
     pwgen \
     john \
 "
