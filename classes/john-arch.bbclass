@@ -12,8 +12,8 @@ def john_arch(a, d):
 
     valid_archs = d.getVar('john_archs', True).split()
 
-    if   re.match('i.86', a):               return 'x86'
-    elif re.match('x86.64$', a):            return 'x86'
+    if   re.match('i.86', a):               return 'x86-any'
+    elif re.match('x86.64$', a):            return 'x86-64'
     elif re.match('a(rm|rmeb)$', a):        return 'arm32'
     elif re.match('mips(el)$', a):          return 'mips'
     elif re.match('mips(64|64el)$', a):     return 'mips64'
