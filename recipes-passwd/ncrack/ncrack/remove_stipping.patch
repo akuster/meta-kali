@@ -1,0 +1,18 @@
+Remove stipping action
+
+Upstream Status: Inappropriate [Configuration]
+
+Signed-off-by: Armin Kuster <akuster808@gmail.com>
+
+Index: Makefile.in
+===================================================================
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -90,7 +90,6 @@ install: install-ncrack
+ install-ncrack: $(TARGET)
+ 	$(INSTALL) -d $(DESTDIR)$(bindir) $(DESTDIR)$(mandir)/man1 $(DESTDIR)$(ncrackdatadir)
+ 	$(INSTALL) -c -m 755 ncrack $(DESTDIR)$(bindir)/ncrack
+-	$(STRIP) $(DESTDIR)$(bindir)/ncrack
+ 	$(INSTALL) -c -m 644 docs/$(TARGET).1 $(DESTDIR)$(mandir)/man1/
+ #	$(INSTALL) -c -m 644 docs/ncrack.xsl $(DESTDIR)$(ncrackdatadir)/
+ #	$(INSTALL) -c -m 644 docs/ncrack.dtd $(DESTDIR)$(ncrackatadir)/
