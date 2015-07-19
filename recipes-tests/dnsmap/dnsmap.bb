@@ -1,7 +1,7 @@
 DESCRIPTION = "Passive DNS network mapper a.k.a. subdomains bruteforcer"
 HOMEPAGE = "https://code.google.com/p/dnsmap/"
 LICENSE = "GPL-2.0"
-LIC_FILES_CHKSUM = "file://gpl-2.0.txt;md5=12345"
+LIC_FILES_CHKSUM = "file://gpl-2.0.txt;md5=751419260aa954499f7abaabaa882bbe"
 
 SRCREV = "6a338197fd8de70e13d400f424dc5aa1e46fc8af"
 PV = "0.30+git${SRCPV}"
@@ -24,3 +24,5 @@ do_install () {
     install -m 755 dnsmap-bulk.sh ${D}/${sbindir}
     install -m 644 *.txt ${D}/${docdir}/${BPN}
 }
+
+RDEPENDS_${PN} = "bash"
