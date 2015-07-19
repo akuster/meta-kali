@@ -1,0 +1,26 @@
+FIx build issues
+
+remove stipping and add CC var.
+
+Upstream Status: Inappropriate 
+
+Signed-of-by: Armin Kuster <akuster808@gmail.com>
+
+
+Index: Makefile
+===================================================================
+--- a/Makefile
++++ b/Makefile
+@@ -24,9 +24,8 @@ OUT= braa
+ LIBS = 
+ 
+ all: ${OBJECTS}
+-	cc $(OBJECTS) -o $(OUT) $(LDFLAGS) $(LIBS)
+-	strip $(OUT)
++	$(CC) $(OBJECTS) -o $(OUT) $(LDFLAGS) $(LIBS)
+ 
+ clean:
+ 	rm -rf $(OBJECTS) $(OUT)
+-	
+\ No newline at end of file
++	
