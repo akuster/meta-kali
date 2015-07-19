@@ -13,6 +13,7 @@ RDEPENDS_${PN} = "\
     dnsmap \
     DHCPig \
     funkload \
+    python-automator \
     rtpflood \
     scapy \
     slowhttptest \
