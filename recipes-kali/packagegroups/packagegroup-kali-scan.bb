@@ -11,9 +11,12 @@ PACKAGES = "\
         "
 
 RDEPENDS_${PN} = "\
+    braa \
     nmap \
     dnsrecon \
     goofile \
+    p0f \
+    p0f-tools \
     theHarvester \
     ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-kali-scan-xfce", "", d)} \
 "
