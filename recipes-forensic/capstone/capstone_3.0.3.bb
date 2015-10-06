@@ -10,4 +10,9 @@ SRC_URI[sha256sum] = "fc2741e7bc5fb23e2f960a54da3fe9858cf01ff45a1cf9bacb88a5870d
 
 inherit cmake
 
-ALLOW_EMPTY_${PN} = "1"
+do_install_append() {
+    mv ${D}${libdir}/libcapstone.so ${D}${libdir}/libcapstone.so.${PV}
+    ln -sf libcapstone.so.${PV} ${D}${libdir}/libcapstone.so
+    ln -sf libcapstone.so.${PV} ${D}${libdir}/libcapstone.so.0
+}
+
