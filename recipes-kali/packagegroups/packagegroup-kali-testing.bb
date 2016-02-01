@@ -22,6 +22,6 @@ RDEPENDS_${PN} = "\
     thc-ipv6 \
     thc-ssl-dos \
     ipv6toolkit \
-    capstone-dev \
+    capstone \
     the-backdoor-factory \
 "
