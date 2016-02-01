@@ -10,6 +10,7 @@ PACKAGES = "\
         "
 
 RDEPENDS_${PN} = "\
+    bed \
     dnsmap \
     DHCPig \
     funkload \
