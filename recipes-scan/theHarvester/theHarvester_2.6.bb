@@ -18,6 +18,7 @@ do_compile[noexec] = "1"
 do_install () {
     install -d ${D}/opt/${PN}
     tar --exclude=.git --exclude=.gitignore -cvf - . | (cd ${D}/opt/${PN}  && tar xvf - )
+    chown -R root:root ${D}/opt/${PN}
 }
 
 PACKAGE = "${PN}"
