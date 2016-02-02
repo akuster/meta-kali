@@ -22,6 +22,7 @@ do_install () {
     cp -a asm ${D}${datadir}/${PN}
     cp -a winapi ${D}${datadir}/${PN}
     install -m 644 COPYING  ${D}/${docdir}/${PN}
+    chown -R root:root  ${D}${datadir}/${PN}
 }
 
 RDEPENDS_${PN} = "python-core python-shell python-ctypes \
