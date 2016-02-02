@@ -22,6 +22,7 @@ do_install () {
     cp -a bedmod ${D}/${sysconfdir}/${BPN}
     cp -a docs ${D}/${docdir}/${BPN}
     install -m 755 bed.pl ${D}/${bindir}
+    chown -R root:root ${D}/${sysconfdir}/${BPN}
 }
 
 RDEPENDS_${PN} = "perl"
