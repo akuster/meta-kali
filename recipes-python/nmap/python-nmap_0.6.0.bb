@@ -5,13 +5,16 @@ SECTION = "devel/python"
 LICENSE = "GPL-3.0"
 LIC_FILES_CHKSUM = "file://gpl-3.0.txt;md5=d32239bcb673463ab874e80d47fae504"
 
-SRC_URI = "http://xael.org/norman/python/${PN}/${PN}-${PV}.tar.gz"
-SRC_URI[md5sum] = "f23ba911dc9cd8018c961c7e66bfc68d"
-SRC_URI[sha256sum] = "160c562b81c8f41c96f84ead8cf736123ab7bb908bb47269d2c5d77a6503d84d"
+SRCNAME = "python-nmap"
 
-S = "${WORKDIR}/${PN}-${PV}"
+SRC_URI = "https://pypi.python.org/packages/source/p/${SRCNAME}/${SRCNAME}-${PV}.tar.gz"
 
-inherit setuptools
+SRC_URI[md5sum] = "c3996b1e8dfb944fa30fb37d3fc43a67"
+SRC_URI[sha256sum] = "233ee39da05aac3f0f22e480dcb0e9b1b707cac3518859aaa1a016f6f88bf250"
+
+S = "${WORKDIR}/${SRCNAME}-${PV}"
+
+inherit distutils
 
 RDEPENDS_${PN} = "python-xml"
 
