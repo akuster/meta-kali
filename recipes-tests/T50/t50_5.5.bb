@@ -3,13 +3,15 @@ LICENSE = "GPLv2"
 SECTION = "testing/security"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=75859989545e37968a99b631ef42722e"
 
-SRC_URI = "http://sourceforge.net/projects/${PN}/files/${PN}-${PV}/${BP}-rc1.tar.gz"
-SRC_URI[md5sum] = "8ca6681158dcf9f8cfba4b3ca91332b7"
-SRC_URI[sha256sum] = "6c17c219f2fa5e56a71c62e1a4c045866a719ab03078a56ed62e66d30a3c79a8"
+SRC_URI = "http://sourceforge.net/projects/${PN}/files/${PN}-${PV}/${PN}-${PV}.tar.gz"
 
-S = "${WORKDIR}/${PN}"
+SRC_URI[md5sum] = "47a76380f3ea6a4bf44a8d0c19cd5ff4"
+SRC_URI[sha256sum] = "f6205a47e45d49524d4bcdf3f5e68d515630c1408b60f0addb01f9901d64834a"
 
 inherit autotools-brokensep
+
+S = "${WORKDIR}"
+
 do_configure () {
     :
 }
