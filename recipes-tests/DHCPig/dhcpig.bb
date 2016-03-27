@@ -10,11 +10,16 @@ SRC_URI = "git://github.com/kamorin/DHCPig.git"
 
 S = "${WORKDIR}/git"
 
-PACKAGE = "${PN}"
+do_configure[noexec] = "1"
+do_compile[noexec] = "1"
 
 do_install () {
     install -d ${D}/${sbindir}
     install -m 755 ${S}/pig.py ${D}/${sbindir}
 }
+
+PACKAGES = "${PN}"
+
+FILES_${PN} = "${sbindir}"
 
 RDEPENDS_${PN} = "python scapy"
