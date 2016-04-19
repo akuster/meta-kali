@@ -17,7 +17,7 @@ RDEPENDS_${PN} = "\
     goofile \
     p0f \
     p0f-tools \
-    theHarvester \
+    theharvester \
     ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-kali-scan-xfce", "", d)} \
 "
 RDEPENDS_packagegroup-kali-scan-xfce = "\

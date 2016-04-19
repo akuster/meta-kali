@@ -12,7 +12,7 @@ PACKAGES = "\
 RDEPENDS_${PN} = "\
     bed \
     dnsmap \
-    DHCPig \
+    dhcpig \
     funkload \
     python-automator \
     rtpflood \

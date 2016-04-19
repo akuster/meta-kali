@@ -21,4 +21,4 @@ PACKAGE = "${PN}"
 
 FILES_${PN} = "/opt/${PN}"
 
-RDEPENDS_${PN} = "xdotool goofile theHarvester nmap dnsrecon perl bash"
+RDEPENDS_${PN} = "xdotool goofile theharvester nmap dnsrecon perl bash"
