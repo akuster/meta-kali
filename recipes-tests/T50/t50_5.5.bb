@@ -3,14 +3,12 @@ LICENSE = "GPLv2"
 SECTION = "testing/security"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=75859989545e37968a99b631ef42722e"
 
-SRC_URI = "http://sourceforge.net/projects/${PN}/files/${PN}-${PV}/${PN}-${PV}.tar.gz"
-
-SRC_URI[md5sum] = "47a76380f3ea6a4bf44a8d0c19cd5ff4"
-SRC_URI[sha256sum] = "f6205a47e45d49524d4bcdf3f5e68d515630c1408b60f0addb01f9901d64834a"
+SRCREV = "75db57c293175fa897439c3ef5effeb8c6ebcb4f"
+SRC_URI = "git://github.com/fredericopissarra/t50"
 
 inherit autotools-brokensep
 
-S = "${WORKDIR}"
+S = "${WORKDIR}/git"
 
 do_configure () {
     :
