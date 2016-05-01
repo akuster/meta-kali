@@ -8,3 +8,5 @@ IMAGE_INSTALL += "\
     packagegroup-kali-base \
     packagegroup-kali-testing \
     "
+
+export IMAGE_BASENAME = "core-image-kali-testing"

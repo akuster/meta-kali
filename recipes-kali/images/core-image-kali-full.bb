@@ -12,3 +12,5 @@ IMAGE_INSTALL += "\
     ${@bb.utils.contains("DISTRO_FEATURES", "wifi", "packagegroup-kali-wireless", "", d)} \
     packagegroup-kali-scan \
     "
+
+export IMAGE_BASENAME = "core-image-kali-full"
