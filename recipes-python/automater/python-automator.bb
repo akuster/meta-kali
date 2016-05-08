@@ -3,7 +3,7 @@ DESCRIPTION = "Automater is a URL/Domain, IP Address, and Md5 Hash OSINT tool ai
 HOMEPAGE = "http://www.tekdefense.com/automater/"
 SECTION = "Testing"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE;md5=12345"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=97da1a4eb6b309e97a7eba7e078318c0"
 
 SRCREV = "5f57a9f6092122188995c93718de643a5aa4dc54"
 
