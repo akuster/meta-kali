@@ -1,7 +1,7 @@
 DESCRIPTION = "A Powerfule DNS enumeration script"
 HOMEPAGE = "ttps://github.com/darkoperator/dnsrecon"
 LICENSE = "GPL-2.0"
-LIC_FILES_CHKSUM = "file://dnsrecon.py;startline=9;endline=10;md5=1234"
+LIC_FILES_CHKSUM = "file://dnsrecon.py;startline=9;endline=10;md5=41ee873eee92495c74f9fa812ddffcfe"
 
 SRCREV = "62e644e798c2807f36a67eeb67691903a7526850"
 SRC_URI = "git://github.com/darkoperator/dnsrecon.git"
