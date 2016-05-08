@@ -6,9 +6,13 @@ LIC_FILES_CHKSUM = "file://docs/gpl.txt;md5=393a5ca445f6965873eca0259a17f833"
 SRCREV = "e6ba3ebc05553df2e609bf1f461cb537fe30f1c8"
 PV = "0.5+git${SRCPV}"
 
+DESKTOP = "kali-bed.desktop"
+PIXMAP_16_16 = "16x16/kali-menu.png"
+PIXMAP_32_32 = "32x32/kali-menu.png"
+
 SRC_URI = "${KALI_MIRROR}/${BPN}"
 
-inherit  autotools-brokensep
+inherit  autotools-brokensep x11_menu
 
 S = "${WORKDIR}/git"
 

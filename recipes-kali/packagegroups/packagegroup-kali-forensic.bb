@@ -22,7 +22,6 @@ RDEPENDS_${PN} = "\
     p7zip \
     sleuthkit \
     tcpdump \
-    tcpflow \
     tcpreplay \
     wireshark \
     packagegroup-kali-forensics-tools \

@@ -8,7 +8,13 @@ LIC_FILES_CHKSUM = "file://../docs/LICENSE;md5=b8c7f7d7654b933d1bebc68cbdea7c05"
 
 SRCREV = "4acad9ba2d3f7fcd08209b840a2cdab2a2bf17ac"
 
+DESKTOP = "kali-reaver.desktop"
+PIXMAP = "kali-menu.png"
+
 SRC_URI = "${KALI_MIRROR}/${BPN}"
+
+SRC_URI += "file://${DESKTOP}"
+SRC_URI += "file://${PIXMAP}"
 
 DEPENDS = "sqlite3 libpcap"
 
@@ -24,4 +30,12 @@ do_install () {
     install -m 755 wash ${D}/${sbindir}
     install -m 755 reaver ${D}/${sbindir}
 
+    install -d ${D}${datadir}/applications/
+    install -m 0644 ${WORKDIR}/${DESKTOP} ${D}${datadir}/applications/
+    install -d ${D}${datadir}/pixmaps/
+    install -m 0644 ${WORKDIR}/${PIXMAP} ${D}${datadir}/pixmaps/
 }
+
+PACKAGES =+ "${PN}-x11-dbg ${PN}-x11"
+DESCRIPTION_${PN}-x11 = "X11 display terminal for ${PN}."
+

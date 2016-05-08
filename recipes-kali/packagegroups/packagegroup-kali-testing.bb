@@ -7,6 +7,7 @@ inherit packagegroup
 
 PACKAGES = "\
     ${PN} \
+      ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-kali-test-xfce", "", d)} \
         "
 
 RDEPENDS_${PN} = "\
@@ -24,4 +25,9 @@ RDEPENDS_${PN} = "\
     ipv6toolkit \
     capstone \
     the-backdoor-factory \
-"
+    ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-kali-test-xfce", "", d)} \
+    "
+
+RDEPENDS_packagegroup-kali-test-xcfe = "\
+    bed-x11 \
+    "
