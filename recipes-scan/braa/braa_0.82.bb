@@ -4,7 +4,7 @@ DESCRIPTION = "The intended usage of such a tool is of course making SNMP querie
 Braa implements its OWN snmp stack, so it does NOT need any SNMP libraries like net-snmp. The implementation is very dirty, supports only several data types, and in any case cannot be stated ‘standard-conforming’! It was designed to be fast, and it is fast. For this reason (well, and also because of my laziness ;), there is no ASN.1 parser in braa – you HAVE to know the numerical values of OID’s (for instance .1.3.6.1.2.1.1.5.0 instead of system.sysName.0)."
 HOMEPAGE = "http://s-tech.elsat.net.pl/"
 LICENSE = "GPL-2.0"
-LIC_FILES_CHKSUM = "file://COPYING;md5=12345"
+LIC_FILES_CHKSUM = "file://COPYING;md5=18810669f13b87348459e611d31ab760"
 
 SRC_URI = "http://s-tech.elsat.net.pl/${BPN}/${BPN}-${PV}.tar.gz"
 SRC_URI += "file://fix_makefile.patch"
