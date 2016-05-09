@@ -2,11 +2,11 @@ Upstream Status: Inappropriate [configuration]
 
 Signed-off-by: Armin Kuster <akuster808@gmail.com>
 
-Index: configure.ac
+Index: tcpflow/configure.ac
 ===================================================================
---- a/configure.ac
-+++ b/configure.ac
-@@ -67,22 +67,6 @@ case $host in
+--- tcpflow.orig/configure.ac
++++ tcpflow/configure.ac
+@@ -71,22 +71,6 @@ case $host in
       ;;		 		     
  esac
  
@@ -29,3 +29,34 @@ Index: configure.ac
  if test -r /bin/uname.exe ; then
    if test "`uname -o`" == "Msys" ; then
      AC_MSG_NOTICE([Compiling with Msys. Setting flags appropriately.])
+Index: tcpflow/m4/slg_searchdirs.m4
+===================================================================
+--- tcpflow.orig/m4/slg_searchdirs.m4
++++ tcpflow/m4/slg_searchdirs.m4
+@@ -1,26 +1 @@
+-if test x"${mingw}" != "xyes" ; then
+-
+-  case $host in
+-    *mingw*)
+-       AC_MSG_NOTICE([Compiling under mingw; will not search other directories.])
+-       ;;
+-    *)
+-       AC_MSG_NOTICE(Compiling under $host.)
+-       # Bring additional directories where things might be found into our
+-       # search path. I don't know why autoconf doesn't do this by default
+-       for spfx in /usr/local /opt/local /sw /usr/local/ssl; do
+-         AC_MSG_NOTICE([checking ${spfx}/include])
+-         if test -d ${spfx}/include; then
+-           CPPFLAGS="-I${spfx}/include $CPPFLAGS"
+-           LDFLAGS="-L${spfx}/lib $LDFLAGS"
+-           AC_MSG_NOTICE([ *** ADDING ${spfx}/include to CPPFLAGS *** ])
+-           AC_MSG_NOTICE([ *** ADDING ${spfx}/lib to LDFLAGS *** ])
+-         fi
+-       done
+-       AC_MSG_NOTICE([ CPPFLAGS = ${CPPFLAGS} ])        
+-       AC_MSG_NOTICE([ LDFLAGS = ${LDFLAGS} ])        
+-       ;;
+-  esac
+-fi
+-
+ 
