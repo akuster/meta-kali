@@ -6,13 +6,19 @@ LIC_FILES_CHKSUM = "file://docs/gpl.txt;md5=393a5ca445f6965873eca0259a17f833"
 SRCREV = "e6ba3ebc05553df2e609bf1f461cb537fe30f1c8"
 PV = "0.5+git${SRCPV}"
 
+DESKDIR = "02-02-fuzzers.directory"
 DESKTOP = "kali-bed.desktop"
 PIXMAP_16_16 = "16x16/kali-menu.png"
 PIXMAP_32_32 = "32x32/kali-menu.png"
 
 SRC_URI = "${KALI_MIRROR}/${BPN}"
 
-inherit  autotools-brokensep x11_menu
+SRC_URI += "file://${DESKTOP}"
+SRC_URI += "file://${PIXMAP_16_16}"
+SRC_URI += "file://${PIXMAP_32_32}"
+SRC_URI += "file://${DESKDIR}"
+
+inherit  autotools-brokensep 
 
 S = "${WORKDIR}/git"
 
@@ -28,5 +34,20 @@ do_install () {
     install -m 755 bed.pl ${D}/${bindir}
     chown -R root:root ${D}/${sysconfdir}/${BPN}
 }
+
+do_install_append () {
+    install -d ${D}${datadir}/applications
+    install -m 0644 ${WORKDIR}/${DESKTOP} ${D}${datadir}/applications/
+    install -d ${D}${datadir}/desktop-directories
+    install -m 0644 ${WORKDIR}/${DESKDIR} ${D}${datadir}/desktop-directories/
+    install -d ${D}${datadir}/pixmaps/16x16
+    install -d ${D}${datadir}/pixmaps/32x32
+    install -m 0644 ${WORKDIR}/${PIXMAP_16_16} ${D}${datadir}/pixmaps/16x16
+    install -m 0644 ${WORKDIR}/${PIXMAP_32_32} ${D}${datadir}/pixmaps/32x32
+}
+
+PACKAGES += "${PN}-x11"
+FILES_${PN}-x11 = "${datadir}/desktop-directories ${datadir}/pixmaps ${datadir}/applications"
+DESCRIPTION_${PN}-x11 = "X11 display terminal for ${PN}."
 
 RDEPENDS_${PN} = "perl"

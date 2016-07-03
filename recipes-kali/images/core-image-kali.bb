@@ -10,9 +10,9 @@ IMAGE_INSTALL = "\
     packagegroup-kali-base \
     os-release \
     ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-core-x11", "", d)} \
-    ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-xfce-base", "", d)} \
     ${ROOTFS_PKGMANAGE_BOOTSTRAP} ${CORE_IMAGE_EXTRA_INSTALL}"
 
+#    ${@bb.utils.contains("DISTRO_FEATURES", "x11", "packagegroup-xfce-base", "", d)} 
 IMAGE_LINGUAS ?= " "
 
 LICENSE = "MIT"
