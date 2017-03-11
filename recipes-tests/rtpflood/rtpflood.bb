@@ -11,12 +11,14 @@ SRC_URI[sha256sum] = "bdfc578b09ba6923e7e765b29c27e10bafb5a81c30defe442bf690de56
 
 S = "${WORKDIR}/${PN}"
 
+TARGET_CC_ARCH += "${LDFLAGS}"
+
 do_configure () {
     sed -i 's/gcc/\$(CC)/' ${S}/Makefile
 }
 
 do_compile () {
-    make CC="${CC}"
+    make CC="${CC}" LDFLAGS="${LDFLAGS}"
 }
 
 do_install () {
