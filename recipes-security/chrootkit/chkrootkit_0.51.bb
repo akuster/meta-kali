@@ -5,9 +5,9 @@ SECTION = "security"
 LICENSE = "GPLv2.0"
 LIC_FILES_CHKSUM = "file://COPYRIGHT;md5=fdbe53788f7081c63387d8087273f5ff"
 
-SRC_URI = "http://archive.ubuntu.com/ubuntu/pool/universe/c/${PN}/${PN}_${PV}.orig.tar.gz"
-SRC_URI[md5sum] = "9e67dd56f835264d43aeb04944610b03"
-SRC_URI[sha256sum] = "9548fc922b0cb8ddf055faff4a4887f140a31c45f2f5e3aa64aad91ecfa56cc7"
+SRC_URI = "https://fossies.org/linux/misc/${BP}.tar.gz"
+SRC_URI[md5sum] = "f021156de4ad6dff0eda3399228f6cb9"
+SRC_URI[sha256sum] = "8301782051f0b8cd213c323624d42fbecd101a583646caef126166dc2852fc25"
 
 inherit autotools-brokensep
 
