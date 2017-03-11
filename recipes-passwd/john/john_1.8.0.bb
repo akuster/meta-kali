@@ -19,6 +19,7 @@ JOHN_SYSTEMWIDE_EXEC="${libexecdir}"
 JOHN_PRIVATE_HOME = "${JOHN_SYSTEMWIDE_HOME}/.john"
 
 inherit autotools-brokensep john-arch
+TARGET_CC_ARCH += "${LDFLAGS}"
 
 do_compile () {
     cp ${WORKDIR}/arm32.h ${S}/src/.
