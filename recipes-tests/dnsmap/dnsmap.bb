@@ -11,6 +11,8 @@ SRC_URI = "git://git.kali.org/packages/dnsmap.git"
 
 S = "${WORKDIR}/git"
 
+TARGET_CC_ARCH += "${LDFLAGS}"
+
 do_configure[noexec] = "1"
 
 do_compile () {
