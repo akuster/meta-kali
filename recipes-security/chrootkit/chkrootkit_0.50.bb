@@ -10,6 +10,9 @@ SRC_URI[md5sum] = "9e67dd56f835264d43aeb04944610b03"
 SRC_URI[sha256sum] = "9548fc922b0cb8ddf055faff4a4887f140a31c45f2f5e3aa64aad91ecfa56cc7"
 
 inherit autotools-brokensep
+
+TARGET_CC_ARCH += "${LDFLAGS}"
+
 do_configure () {
     sed -i 's/@strip.*$//' ${S}/Makefile
 }
