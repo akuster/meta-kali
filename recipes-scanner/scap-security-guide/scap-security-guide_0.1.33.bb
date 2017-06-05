@@ -8,12 +8,9 @@ LICENSE = "LGPL-2.1"
 
 DEPENDS = "openscap-native"
 
-SRCREV = "251f6bfdc560f691834a8cd5c37da71d92460030"
-SRC_URI = "git://github.com/OpenSCAP/scap-security-guide.git;"
-SRC_URI += " \
-	file://0001-add-OE.patch \
-	file://0002-add-oe-work.patch \
-	"
+SRCREV = "4bf73faf78e283088a29cdb2ee9eeef0526b7502"
+SRC_URI = "git://github.com/akuster/scap-security-guide.git;branch=oe;"
+
 inherit cmake
 
 PARALLEL_MAKE = ""
