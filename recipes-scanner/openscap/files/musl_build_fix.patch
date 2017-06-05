@@ -1,0 +1,78 @@
+
+| debug.c:114:44: error: 'S_IROTH' undeclared (first use in this function)
+|     S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
+|                                             ^~~~~~~
+| debug.c:114:54: error: 'S_IWOTH' undeclared (first use in this function)
+|     S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH);
+|                                                       ^~~~~~~
+
+probes/fsdev.c: In function '__fsdev_init':
+probes/fsdev.c:159:17: error: '_PATH_MOUNTED' undeclared (first use in this function)
+  fp = setmntent(_PATH_MOUNTED, "r");
+
+Add __STRING()
+/oval_probe_ext.c:663:49: warning: implicit declaration of function '__STRING' [-Wimplicit-function-declaration]
+                 val = probe_obj_getentval (obj, __STRING(name), 1);     \
+                                                 ^
+./oval_probe_ext.c:680:2: note: in expansion of macro 'SYSINF_EXT'
+  SYSINF_EXT(s_sinf, os_name, sysinf, fail_gen);
+  ^~~~~~~~~~
+./oval_probe_ext.c:680:21: error: 'os_name' undeclared (first use in this function)
+  SYSINF_EXT(s_sinf, os_name, sysinf, fail_gen);
+
+
+Index: git/src/common/debug.c
+===================================================================
+--- git.orig/src/common/debug.c
++++ git/src/common/debug.c
+@@ -34,6 +34,7 @@
+ # include <unistd.h>
+ # include <time.h>
+ # include <errno.h>
++# include <fcntl.h>
+ 
+ # include <sexp.h>
+ # include <sexp-output.h>
+Index: git/src/OVAL/probes/SEAP/sch_pipe.c
+===================================================================
+--- git.orig/src/OVAL/probes/SEAP/sch_pipe.c
++++ git/src/OVAL/probes/SEAP/sch_pipe.c
+@@ -31,7 +31,7 @@
+ #include <limits.h>
+ #include <sys/stat.h>
+ #include <sys/uio.h>
+-#include <sys/unistd.h>
++#include <unistd.h>
+ #include <sys/wait.h>
+ #include <sys/socket.h>
+ #include <sys/select.h>
+Index: git/src/OVAL/probes/fsdev.c
+===================================================================
+--- git.orig/src/OVAL/probes/fsdev.c
++++ git/src/OVAL/probes/fsdev.c
+@@ -44,6 +44,7 @@
+ #if defined(__linux__)
+ # include <mntent.h>
+ # include <unistd.h>
++# include <paths.h>
+ #elif defined(__SVR4) && defined(__sun)
+ # include <sys/mnttab.h>
+ # include <sys/mntent.h>
+Index: git/src/OVAL/oval_probe_ext.c
+===================================================================
+--- git.orig/src/OVAL/oval_probe_ext.c
++++ git/src/OVAL/oval_probe_ext.c
+@@ -46,10 +46,11 @@
+ 
+ #define __ERRBUF_SIZE 128
+ 
+-#if defined(__SVR4) && defined (__sun)
+-#define __STRING(x)     #x
++#ifndef __STRING
++# define __STRING(x) #x
+ #endif
+ 
++
+ static oval_pdtbl_t *oval_pdtbl_new(void);
+ static void          oval_pdtbl_free(oval_pdtbl_t *table);
+ static int           oval_pdtbl_add(oval_pdtbl_t *table, oval_subtype_t type, int sd, const char *uri);
